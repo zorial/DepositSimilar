@@ -28,7 +28,7 @@ namespace DepositSimilar
 
             // ZMIANA: Używamy Lang.Get dla nazwy skrótu w menu ustawień
             // Format klucza: "modid:klucz"
-            string hotkeyName = Lang.GetL(player.LanguageCode, "depositsimilar:depositsimilar-hotkey");
+            string hotkeyName = Lang.Get("depositsimilar:depositsimilar-hotkey");
             api.Input.RegisterHotKey(
                 "depositsimilar",
                 hotkeyName,
