@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Authors>Zor1al</Authors>
+    <Version>1.0.0</Version>
+    <AssemblyName>DepositSimilar</AssemblyName>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <!-- ============================================================ -->
+  <!-- KONFIGURACJA ŚCIEŻKI DO GRY -->
+  <!-- ============================================================ -->
+
+  <!-- 1. Próbujemy załadować plik "Environment.props" (jeśli istnieje) -->
+  <Import Project="Environment.props" Condition="Exists('Environment.props')" />
+
+  <!-- 2. Jeśli plik nie ustawił ścieżki (lub nie istnieje), ustawiamy domyślną (AppData) -->
+  <PropertyGroup Condition="'$(VintagestoryPath)' == ''">
+    <VintagestoryPath>$(AppData)\Vintagestory</VintagestoryPath>
+  </PropertyGroup>
+
+  <!-- ============================================================ -->
+
+  <ItemGroup>
+    <Reference Include="VintagestoryAPI">
+      <HintPath>$(VintagestoryPath)\VintagestoryAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VintagestoryLib">
+      <HintPath>$(VintagestoryPath)\VintagestoryLib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>$(VintagestoryPath)\Lib\protobuf-net.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(VintagestoryPath)\Lib\Newtonsoft.Json.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="modinfo.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

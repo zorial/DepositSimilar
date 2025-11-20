@@ -1,0 +1,11 @@
+{
+  "type": "code",
+  "modid": "depositsimilar",
+  "name": "Deposit Similar Items",
+  "authors": ["Zor1al"],
+  "description": "Wrzuca do skrzyni przedmioty z ekwipunku, jeśli taki sam typ przedmiotu już tam jest.",
+  "version": "1.0.0",
+  "dependencies": {
+    "game": "1.21.0" 
+  }
+}
