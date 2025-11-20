@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Numerics;
+using System.Reflection.Emit;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config; // Tutaj znajduje się Lang
@@ -26,7 +28,7 @@ namespace DepositSimilar
 
             // ZMIANA: Używamy Lang.Get dla nazwy skrótu w menu ustawień
             // Format klucza: "modid:klucz"
-            string hotkeyName = Lang.Get("depositsimilar:depositsimilar-hotkey");
+            string hotkeyName = Lang.GetL(player.LanguageCode, "depositsimilar:depositsimilar-hotkey");
             api.Input.RegisterHotKey(
                 "depositsimilar",
                 hotkeyName,
@@ -77,7 +79,7 @@ namespace DepositSimilar
             if (openedInv == null)
             {
                 // ZMIANA: Wyślij wiadomość do gracza używając tłumaczenia
-                string msg = Lang.Get("depositsimilar:depositsimilar-msg-nochest");
+                string msg = Lang.GetL(player.LanguageCode, "depositsimilar:depositsimilar-msg-nochest");
                 player.SendMessage(GlobalConstants.GeneralChatGroup, msg, EnumChatType.Notification);
                 return;
             }
@@ -120,13 +122,13 @@ namespace DepositSimilar
                 player.Entity.World.PlaySoundAt(new AssetLocation("game:sounds/effect/squish1"), player.Entity);
 
                 // ZMIANA: Wiadomość o sukcesie z liczbą (placeholder {0})
-                string msg = Lang.Get("depositsimilar:depositsimilar-msg-success", itemsMovedCount);
+                string msg = Lang.GetL(player.LanguageCode, "depositsimilar:depositsimilar-msg-success", itemsMovedCount);
                 player.SendMessage(GlobalConstants.GeneralChatGroup, msg, EnumChatType.Notification);
             }
             else
             {
                 // ZMIANA: Wiadomość o porażce
-                string msg = Lang.Get("depositsimilar:depositsimilar-msg-fail");
+                string msg = Lang.GetL(player.LanguageCode, "depositsimilar:depositsimilar-msg-fail");
                 player.SendMessage(GlobalConstants.GeneralChatGroup, msg, EnumChatType.Notification);
             }
         }

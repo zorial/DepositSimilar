@@ -1,0 +1,9 @@
+{
+  "modname-depositsimilar": "Deposit Similar Items",
+  "moddescription-depositsimilar": "Adds a hotkey (default X) to automatically move items from your inventory to an opened chest if matching items are already inside.",
+
+  "depositsimilar-hotkey": "Deposit Similar (Chest)",
+  "depositsimilar-msg-success": "Success! Moved {0} items.",
+  "depositsimilar-msg-fail": "Nothing moved (no matching items or no space).",
+  "depositsimilar-msg-nochest": "No matching chest found."
+}
