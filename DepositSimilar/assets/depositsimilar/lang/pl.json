@@ -1,0 +1,9 @@
+{
+  "modname-depositsimilar": "Umieść Podobne (Skrzynia)",
+  "moddescription-depositsimilar": "Mod dodaje skrót klawiszowy (domyślnie X), który automatycznie przenosi przedmioty z ekwipunku do otwartej skrzyni, jeśli takie same przedmioty już się tam znajdują.",
+  
+  "depositsimilar-hotkey": "Umieść podobne (Skrzynia)",
+  "depositsimilar-msg-success": "Sukces! Przeniesiono {0} szt.",
+  "depositsimilar-msg-fail": "Nic nie przeniesiono (brak pasujących przedmiotów lub miejsca).",
+  "depositsimilar-msg-nochest": "Nie znaleziono pasującej skrzyni."
+}
